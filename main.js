@@ -14,6 +14,8 @@ setTimeout(() => {
       <!-- ngIf: item.children -->
     </li>`);
 
+    document.body.insertAdjacentHTML('beforeend', `<link rel="stylesheet" href="">`)
+
     const Elem = document.getElementById('menu-test')
     Elem.addEventListener('click', event => {
         console.log("Magister++ V.1")

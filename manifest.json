@@ -8,11 +8,9 @@
     },
     "content_scripts": [
       {
-        "css": ["style.css"],
         "js": ["main.js"],
         "matches": ["https://*.magister.net/*"]
       }
     ],
     "permissions": ["*://localhost/*"]
   }
-  
