@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "Magister++",
+    "version": "1.0.0",
+    "description": "Adds new features to Magister",
+    "icons": {
+      "256": "Assets/Icons/Icon_256x256.png"
+    },
+    "content_scripts": [
+      {
+        "css": ["style.css"],
+        "js": ["main.js"],
+        "matches": ["https://*.magister.net/*"]
+      }
+    ],
+    "permissions": ["*://localhost/*"]
+  }
+  
