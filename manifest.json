@@ -8,12 +8,17 @@
     },
     "content_scripts": [
       {
-        "js": ["main.js"],
+        "js": ["content.js"],
+        "html": ["index.html"],
         "matches": ["https://*.magister.net/*"]
       }
     ],
     "web_accessible_resources": [
-      "Styles/*.css"
+      "Styles/*.css",
+      "Scripts/*.js",
+      "content.js"
     ],
-    "permissions": ["*://localhost/*"]
+    "permissions": [
+        "storage"
+    ]
   }
