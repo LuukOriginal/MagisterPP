@@ -1,3 +1,5 @@
+var Style;
+
 setTimeout(() => {
     const SideBar = document.querySelector('.main-menu')
 
@@ -14,13 +16,32 @@ setTimeout(() => {
       <!-- ngIf: item.children -->
     </li>`);
 
-    document.body.insertAdjacentHTML('beforeend', `<link rel="stylesheet" href="">`)
-
     const Elem = document.getElementById('menu-test')
     Elem.addEventListener('click', event => {
         console.log("Magister++ V.1")
-        document.body.insertAdjacentHTML('beforeend', `
-        <div class="MagPPSettings">hello world!</div>
-        `)
+
+        if(!Style) {
+          let link = document.createElement('link');
+          link.href = chrome.extension.getURL('Styles/Viper/Main.css');
+          link.rel = 'stylesheet';
+  
+          link.onerror = (err) => console.warn(err);
+          Style = link
+  
+          document.head.append(link);
+        } else {
+          Style.remove()
+          Style = null;
+        }
+
+        // document.body.insertAdjacentHTML('beforeend', `
+        // <div class="MagPPSettings">hello world!</div>
+        // `)
     });
 }, 2000);
+
+const addStyle = (() => {
+  const style = document.createElement('style');
+  document.head.append(style);
+  return (styleString) => style.textContent = styleString;
+})();
