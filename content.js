@@ -10,3 +10,9 @@ const GlobalScript = document.createElement('script')
 GlobalScript.text = `var ExtensionPath = "${resourceData}"`;
 GlobalScript.type = 'text/javascript';
 head.insertBefore(GlobalScript, head.lastChild)
+
+////////////////////////////////////////////////////
+const WinGui = document.createElement('script')
+WinGui.src = chrome.extension.getURL("WinBox/winbox.bundle.js")
+WinGui.type = 'text/javascript';
+head.insertBefore(WinGui, head.lastChild)

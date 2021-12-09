@@ -9,13 +9,14 @@
     "content_scripts": [
       {
         "js": ["content.js"],
-        "html": ["index.html"],
-        "matches": ["https://*.magister.net/*"]
+        "matches": ["https://*.magister.net/*"],
+        "css": ["style.css"]
       }
     ],
     "web_accessible_resources": [
       "Styles/*.css",
       "Scripts/*.js",
+      "WinBox/*.js",
       "content.js"
     ],
     "permissions": [
